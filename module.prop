@@ -1,0 +1,6 @@
+id=custom_dpi_zram_411
+name=Custom DPI 411 + ZRAM Tweaks
+version=1.0
+versionCode=1
+author=Codex
+description=Sets display DPI to 411 and applies ZRAM/swappiness tuning at boot.
