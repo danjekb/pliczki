@@ -16,17 +16,3 @@ Ten moduł ustawia przy starcie systemu:
 ## Uwaga
 
 Wartość `disksize` jest bardzo wysoka (24 GiB). Upewnij się, że Twoje urządzenie i kernel poprawnie obsługują taki rozmiar ZRAM.
-
-## Gotowa paczka ZIP (GitHub Release)
-
-Repo zawiera gotowy plik ZIP do wydania:
-
-- `release/custom_dpi_zram_411-v1.0.0.zip`
-
-Dodatkowo dodany jest workflow GitHub Actions (`.github/workflows/release.yml`), który po utworzeniu taga `v*` buduje ZIP i publikuje go jako asset w GitHub Release.
-
-Lokalne budowanie ZIP:
-
-```bash
-./build-release-zip.sh v1.0.0
-```
