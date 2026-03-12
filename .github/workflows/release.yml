@@ -1,0 +1,28 @@
+name: Release Magisk Module
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build release zip
+        run: |
+          mkdir -p release
+          zip -j "release/custom_dpi_zram_411-${GITHUB_REF_NAME:-manual}.zip" module.prop customize.sh service.sh README.md
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.zip
+          generate_release_notes: true
